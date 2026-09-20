@@ -3,19 +3,18 @@
 <head>
 
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Partner With Meisophant</title>
+  <title>Partnership | Meisophant</title>
 
   <meta
     name="description"
-    content="Partner with Meisophant to build technology, ventures, and opportunities for the future."
+    content="Meisophant Partnership Inquiry"
   >
-
-  <meta name="theme-color" content="#050505">
 
   <link
     rel="icon"
@@ -44,19 +43,18 @@
     :root {
 
       --black: #050505;
-      --black-soft: #090909;
+      --panel: #0a0a0b;
 
-      --white: #f5f3f7;
-      --muted: #92909a;
+      --white: #f4f2f6;
+      --muted: #8e8995;
 
       --purple: #9370db;
       --purple-light: #b99bea;
-      --purple-dark: #6f42b8;
 
-      --border: rgba(255,255,255,0.09);
+      --border: rgba(255,255,255,.10);
 
-      --font-display: "Syne", sans-serif;
-      --font-body: "DM Sans", sans-serif;
+      --display: "Syne", sans-serif;
+      --body: "DM Sans", sans-serif;
 
     }
 
@@ -79,20 +77,16 @@
 
     body {
 
+      min-height: 100vh;
+
       background: var(--black);
 
       color: var(--white);
 
-      font-family: var(--font-body);
+      font-family: var(--body);
 
       overflow-x: hidden;
 
-    }
-
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
 
@@ -104,62 +98,75 @@
     }
 
 
+    button {
+      cursor: pointer;
+    }
+
+
     /* =====================================================
        BACKGROUND
     ===================================================== */
 
-    #gridCanvas {
+    body::before {
+
+      content: "";
 
       position: fixed;
 
       inset: 0;
 
-      width: 100%;
-      height: 100%;
+      pointer-events: none;
 
-      z-index: -5;
+      background-image:
 
-      opacity: .55;
+        linear-gradient(
+          rgba(147,112,219,.035) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(147,112,219,.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 60px 60px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 90%
+        );
+
+      z-index: -2;
 
     }
 
 
-    .ambient {
+    body::after {
+
+      content: "";
 
       position: fixed;
 
-      width: 500px;
-      height: 500px;
+      width: 600px;
+      height: 600px;
 
-      border-radius: 50%;
-
-      filter: blur(120px);
-
-      pointer-events: none;
-
-      z-index: -4;
-
-      opacity: .12;
-
-    }
-
-
-    .ambient-one {
-
-      top: -200px;
-      left: -200px;
+      top: -300px;
+      right: -250px;
 
       background: var(--purple);
 
-    }
+      opacity: .07;
 
+      filter: blur(140px);
 
-    .ambient-two {
+      border-radius: 50%;
 
-      right: -250px;
-      bottom: -250px;
+      pointer-events: none;
 
-      background: var(--purple-dark);
+      z-index: -1;
 
     }
 
@@ -168,25 +175,20 @@
        HEADER
     ===================================================== */
 
-    .header {
-
-      position: absolute;
-
-      top: 0;
-      left: 0;
+    header {
 
       width: 100%;
 
-      z-index: 20;
+      padding: 28px 5%;
 
-      padding: 30px 5%;
+      border-bottom: 1px solid var(--border);
 
     }
 
 
     .header-inner {
 
-      max-width: 1500px;
+      max-width: 1150px;
 
       margin: auto;
 
@@ -205,15 +207,19 @@
 
       align-items: center;
 
-      gap: 12px;
+      gap: 11px;
 
-      font-family: var(--font-display);
+      color: var(--white);
 
-      font-size: 13px;
+      text-decoration: none;
+
+      font-family: var(--display);
+
+      font-size: 12px;
 
       font-weight: 700;
 
-      letter-spacing: .14em;
+      letter-spacing: .15em;
 
     }
 
@@ -223,74 +229,62 @@
       width: 34px;
       height: 34px;
 
-      border: 1px solid rgba(147,112,219,.6);
-
       display: flex;
 
       align-items: center;
       justify-content: center;
 
+      border: 1px solid rgba(147,112,219,.55);
+
       color: var(--purple-light);
 
-      font-family: var(--font-display);
-
-      font-weight: 800;
+      font-size: 15px;
 
     }
 
 
-    .header-status {
+    .header-label {
 
-      display: flex;
-
-      align-items: center;
-
-      gap: 9px;
-
-      color: #66616d;
+      color: #5e5965;
 
       font-size: 9px;
 
-      letter-spacing: .15em;
-
-    }
-
-
-    .status-dot {
-
-      width: 6px;
-      height: 6px;
-
-      border-radius: 50%;
-
-      background: var(--purple);
-
-      box-shadow: 0 0 12px var(--purple);
+      letter-spacing: .16em;
 
     }
 
 
     /* =====================================================
-       HERO
+       MAIN
     ===================================================== */
 
-    .hero {
+    main {
 
-      min-height: 100vh;
+      width: 100%;
 
-      max-width: 1500px;
+      padding: 80px 20px 120px;
+
+    }
+
+
+    .container {
+
+      width: 100%;
+
+      max-width: 850px;
 
       margin: auto;
 
-      padding: 180px 5% 120px;
+    }
 
-      display: flex;
 
-      flex-direction: column;
+    /* =====================================================
+       INTRO
+    ===================================================== */
 
-      justify-content: center;
+    .intro {
 
-      position: relative;
+      margin-bottom: 55px;
 
     }
 
@@ -301,15 +295,15 @@
 
       align-items: center;
 
-      gap: 13px;
+      gap: 10px;
 
       color: var(--purple-light);
 
-      font-size: 10px;
-
-      letter-spacing: .18em;
+      font-size: 9px;
 
       font-weight: 600;
+
+      letter-spacing: .18em;
 
     }
 
@@ -318,7 +312,7 @@
 
       content: "";
 
-      width: 35px;
+      width: 30px;
 
       height: 1px;
 
@@ -327,188 +321,37 @@
     }
 
 
-    .hero h1 {
-
-      max-width: 1200px;
-
-      margin-top: 30px;
-
-      font-family: var(--font-display);
-
-      font-size: clamp(4.5rem, 10vw, 10rem);
-
-      line-height: .84;
-
-      letter-spacing: -.075em;
-
-    }
-
-
-    .hero h1 span {
-
-      color: var(--purple);
-
-    }
-
-
-    .hero-description {
-
-      max-width: 680px;
-
-      margin-top: 45px;
-
-      color: var(--muted);
-
-      font-size: 17px;
-
-      line-height: 1.8;
-
-    }
-
-
-    .hero-actions {
-
-      display: flex;
-
-      gap: 14px;
-
-      margin-top: 40px;
-
-      flex-wrap: wrap;
-
-    }
-
-
-    .btn {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 12px;
-
-      padding: 16px 22px;
-
-      border: 1px solid var(--border);
-
-      font-size: 11px;
-
-      letter-spacing: .08em;
-
-      transition: .3s ease;
-
-      cursor: pointer;
-
-    }
-
-
-    .btn-primary {
-
-      background: var(--purple);
-
-      color: #fff;
-
-      border-color: var(--purple);
-
-    }
-
-
-    .btn-primary:hover {
-
-      background: var(--purple-light);
-
-      transform: translateY(-3px);
-
-    }
-
-
-    .btn-secondary:hover {
-
-      border-color: rgba(147,112,219,.5);
-
-      transform: translateY(-3px);
-
-    }
-
-
-    .hero-index {
-
-      position: absolute;
-
-      right: 5%;
-
-      bottom: 50px;
-
-      color: #4c4852;
-
-      font-size: 9px;
-
-      letter-spacing: .18em;
-
-    }
-
-
-    /* =====================================================
-       INTRO
-    ===================================================== */
-
-    .section {
-
-      max-width: 1500px;
-
-      margin: auto;
-
-      padding: 130px 5%;
-
-    }
-
-
-    .section-label {
-
-      color: var(--purple-light);
-
-      font-size: 9px;
-
-      letter-spacing: .18em;
-
-      font-weight: 600;
-
-    }
-
-
-    .section-title {
-
-      max-width: 950px;
+    .intro h1 {
 
       margin-top: 25px;
 
-      font-family: var(--font-display);
+      font-family: var(--display);
 
-      font-size: clamp(3.2rem, 6vw, 6.5rem);
+      font-size: clamp(3.5rem, 8vw, 7rem);
 
-      line-height: .92;
+      line-height: .88;
 
-      letter-spacing: -.06em;
+      letter-spacing: -.065em;
 
     }
 
 
-    .section-title span {
+    .intro h1 span {
 
       color: var(--purple);
 
     }
 
 
-    .section-description {
+    .intro p {
 
-      max-width: 680px;
+      max-width: 600px;
 
-      margin-top: 28px;
+      margin-top: 25px;
 
       color: var(--muted);
+
+      font-size: 14px;
 
       line-height: 1.8;
 
@@ -516,480 +359,122 @@
 
 
     /* =====================================================
-       PARTNER TYPES
+       TYPE SELECTOR
     ===================================================== */
 
-    .partner-grid {
+    .type-section {
 
-      margin-top: 70px;
-
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 1px;
-
-      background: var(--border);
+      margin-bottom: 45px;
 
     }
 
 
-    .partner-card {
-
-      min-height: 310px;
-
-      padding: 38px;
-
-      background: var(--black);
-
-      transition: .4s ease;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-    }
-
-
-    .partner-card:hover {
-
-      background: rgba(147,112,219,.035);
-
-    }
-
-
-    .card-number {
-
-      color: #4d4952;
-
-      font-size: 10px;
-
-      letter-spacing: .15em;
-
-    }
-
-
-    .partner-card h3 {
-
-      margin-top: 30px;
-
-      font-family: var(--font-display);
-
-      font-size: 32px;
-
-      letter-spacing: -.04em;
-
-    }
-
-
-    .partner-card h3 span {
-
-      color: var(--purple);
-
-    }
-
-
-    .partner-card p {
-
-      max-width: 500px;
-
-      margin-top: 12px;
-
-      color: var(--muted);
-
-      font-size: 14px;
-
-      line-height: 1.75;
-
-    }
-
-
-    /* =====================================================
-       VALUE
-    ===================================================== */
-
-    .value-section {
-
-      padding-top: 60px;
-
-    }
-
-
-    .value-grid {
-
-      margin-top: 70px;
-
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 20px;
-
-    }
-
-
-    .value-card {
-
-      min-height: 360px;
-
-      padding: 35px;
-
-      border: 1px solid var(--border);
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-      background:
-
-        radial-gradient(
-
-          circle at 100% 0%,
-
-          rgba(147,112,219,.07),
-
-          transparent 40%
-
-        );
-
-    }
-
-
-    .value-number {
-
-      color: #4d4952;
-
-      font-size: 10px;
-
-      letter-spacing: .15em;
-
-    }
-
-
-    .value-card h3 {
-
-      font-family: var(--font-display);
-
-      font-size: 28px;
-
-      letter-spacing: -.035em;
-
-    }
-
-
-    .value-card p {
-
-      margin-top: 12px;
-
-      color: var(--muted);
-
-      font-size: 14px;
-
-      line-height: 1.75;
-
-    }
-
-
-    /* =====================================================
-       ECOSYSTEM
-    ===================================================== */
-
-    .ecosystem {
-
-      position: relative;
-
-      min-height: 700px;
-
-      margin-top: 70px;
-
-      border: 1px solid var(--border);
-
-      overflow: hidden;
-
-      background:
-
-        radial-gradient(
-
-          circle at center,
-
-          rgba(147,112,219,.1),
-
-          transparent 42%
-
-        );
-
-    }
-
-
-    .ecosystem-grid {
-
-      position: absolute;
-
-      inset: 0;
-
-      background-image:
-
-        linear-gradient(
-
-          rgba(147,112,219,.045) 1px,
-
-          transparent 1px
-
-        ),
-
-        linear-gradient(
-
-          90deg,
-
-          rgba(147,112,219,.045) 1px,
-
-          transparent 1px
-
-        );
-
-      background-size: 50px 50px;
-
-    }
-
-
-    .ecosystem-core {
-
-      position: absolute;
-
-      top: 50%;
-      left: 50%;
-
-      transform: translate(-50%, -50%);
-
-      width: 210px;
-      height: 210px;
-
-      border-radius: 50%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      border: 1px solid rgba(147,112,219,.55);
-
-      background:
-
-        radial-gradient(
-
-          circle,
-
-          rgba(147,112,219,.22),
-
-          rgba(5,5,5,.96) 65%
-
-        );
-
-      box-shadow:
-
-        0 0 100px rgba(147,112,219,.18);
-
-      z-index: 5;
-
-    }
-
-
-    .ecosystem-core strong {
+    .field-label {
 
       display: block;
 
-      font-family: var(--font-display);
+      margin-bottom: 13px;
 
-      font-size: 27px;
-
-    }
-
-
-    .ecosystem-core small {
-
-      display: block;
-
-      margin-top: 7px;
-
-      color: #69636f;
-
-      font-size: 8px;
-
-      letter-spacing: .16em;
-
-    }
-
-
-    .ecosystem-node {
-
-      position: absolute;
-
-      width: 160px;
-      height: 160px;
-
-      border: 1px solid var(--border);
-
-      background: rgba(5,5,5,.92);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      transition: .4s ease;
-
-      z-index: 4;
-
-    }
-
-
-    .ecosystem-node:hover {
-
-      border-color: rgba(147,112,219,.5);
-
-      transform: scale(1.05);
-
-    }
-
-
-    .ecosystem-node strong {
-
-      display: block;
-
-      font-family: var(--font-display);
-
-      font-size: 18px;
-
-    }
-
-
-    .ecosystem-node small {
-
-      display: block;
-
-      margin-top: 7px;
-
-      color: #65606b;
-
-      font-size: 8px;
-
-      letter-spacing: .12em;
-
-    }
-
-
-    .node-a {
-
-      top: 11%;
-      left: 12%;
-
-    }
-
-
-    .node-b {
-
-      top: 11%;
-      right: 12%;
-
-    }
-
-
-    .node-c {
-
-      bottom: 11%;
-      left: 12%;
-
-    }
-
-
-    .node-d {
-
-      bottom: 11%;
-      right: 12%;
-
-    }
-
-
-    /* =====================================================
-       WHAT WE ARE LOOKING FOR
-    ===================================================== */
-
-    .looking-list {
-
-      margin-top: 70px;
-
-      border-top: 1px solid var(--border);
-
-    }
-
-
-    .looking-item {
-
-      display: grid;
-
-      grid-template-columns: 70px 1fr 180px;
-
-      gap: 30px;
-
-      align-items: center;
-
-      padding: 32px 5px;
-
-      border-bottom: 1px solid var(--border);
-
-    }
-
-
-    .looking-number {
-
-      color: #4c4852;
-
-      font-size: 10px;
-
-      letter-spacing: .14em;
-
-    }
-
-
-    .looking-item h3 {
-
-      font-family: var(--font-display);
-
-      font-size: 25px;
-
-    }
-
-
-    .looking-item p {
-
-      margin-top: 7px;
-
-      color: var(--muted);
-
-      font-size: 13px;
-
-    }
-
-
-    .looking-tag {
-
-      text-align: right;
-
-      color: var(--purple-light);
+      color: #807b86;
 
       font-size: 9px;
 
+      font-weight: 600;
+
+      letter-spacing: .15em;
+
+    }
+
+
+    .type-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 8px;
+
+    }
+
+
+    .type-option {
+
+      position: relative;
+
+    }
+
+
+    .type-option input {
+
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+    }
+
+
+    .type-option label {
+
+      min-height: 95px;
+
+      padding: 18px 15px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.015);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      cursor: pointer;
+
+      transition: .25s ease;
+
+    }
+
+
+    .type-option label:hover {
+
+      border-color: rgba(147,112,219,.45);
+
+    }
+
+
+    .type-option input:checked + label {
+
+      border-color: var(--purple);
+
+      background: rgba(147,112,219,.08);
+
+      box-shadow:
+        inset 0 0 0 1px rgba(147,112,219,.15);
+
+    }
+
+
+    .type-number {
+
+      color: #4d4952;
+
+      font-size: 8px;
+
       letter-spacing: .12em;
+
+    }
+
+
+    .type-name {
+
+      font-family: var(--display);
+
+      font-size: 14px;
+
+      line-height: 1.1;
 
     }
 
@@ -998,151 +483,160 @@
        FORM
     ===================================================== */
 
-    .form-section {
-
-      padding-bottom: 150px;
-
-    }
-
-
-    .form-layout {
-
-      margin-top: 70px;
-
-      display: grid;
-
-      grid-template-columns: .8fr 1.2fr;
-
-      gap: 70px;
-
-    }
-
-
-    .form-side h3 {
-
-      margin-top: 25px;
-
-      font-family: var(--font-display);
-
-      font-size: clamp(3rem, 5vw, 5rem);
-
-      line-height: .95;
-
-      letter-spacing: -.055em;
-
-    }
-
-
-    .form-side h3 span {
-
-      color: var(--purple);
-
-    }
-
-
-    .form-side p {
-
-      max-width: 480px;
-
-      margin-top: 25px;
-
-      color: var(--muted);
-
-      line-height: 1.8;
-
-    }
-
-
-    .form-contact {
-
-      margin-top: 45px;
-
-      padding-top: 25px;
-
-      border-top: 1px solid var(--border);
-
-    }
-
-
-    .form-contact-label {
-
-      color: #55515d;
-
-      font-size: 9px;
-
-      letter-spacing: .14em;
-
-    }
-
-
-    .form-contact a {
-
-      display: inline-block;
-
-      margin-top: 8px;
-
-      color: var(--white);
-
-      font-size: 14px;
-
-    }
-
-
-    .form-box {
-
-      padding: 45px;
+    .form-panel {
 
       border: 1px solid var(--border);
 
-      background:
-
-        radial-gradient(
-
-          circle at 100% 0%,
-
-          rgba(147,112,219,.08),
-
-          transparent 35%
-
-        );
+      background: rgba(255,255,255,.012);
 
     }
 
 
-    .form-box h4 {
+    .form-header {
 
-      font-family: var(--font-display);
+      padding: 25px 30px;
 
-      font-size: 30px;
+      border-bottom: 1px solid var(--border);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+    }
+
+
+    .form-header h2 {
+
+      font-family: var(--display);
+
+      font-size: 22px;
+
+      letter-spacing: -.03em;
+
+    }
+
+
+    .form-progress {
+
+      color: #5d5864;
+
+      font-size: 8px;
+
+      letter-spacing: .13em;
+
+      white-space: nowrap;
+
+    }
+
+
+    form {
+
+      padding: 35px 30px 30px;
+
+    }
+
+
+    /* =====================================================
+       FORM SECTIONS
+    ===================================================== */
+
+    .form-section {
+
+      display: none;
+
+    }
+
+
+    .form-section.active {
+
+      display: block;
+
+      animation: sectionIn .35s ease;
+
+    }
+
+
+    @keyframes sectionIn {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+
+    .section-heading {
+
+      margin-bottom: 28px;
+
+    }
+
+
+    .section-heading h3 {
+
+      font-family: var(--display);
+
+      font-size: 26px;
 
       letter-spacing: -.035em;
 
     }
 
 
-    .form-box > p {
+    .section-heading p {
 
-      margin-top: 9px;
+      margin-top: 7px;
 
       color: var(--muted);
 
-      font-size: 13px;
+      font-size: 12px;
 
       line-height: 1.7;
 
     }
 
 
-    .form {
+    /* =====================================================
+       FIELDS
+    ===================================================== */
 
-      margin-top: 35px;
+    .fields {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 20px;
 
     }
 
 
     .field {
 
-      margin-bottom: 21px;
+      margin-bottom: 2px;
+
+    }
+
+
+    .field.full {
+
+      grid-column: 1 / -1;
 
     }
 
@@ -1151,13 +645,22 @@
 
       display: block;
 
-      margin-bottom: 9px;
+      margin-bottom: 8px;
 
-      color: #817b87;
+      color: #817c87;
 
       font-size: 9px;
 
-      letter-spacing: .13em;
+      font-weight: 600;
+
+      letter-spacing: .12em;
+
+    }
+
+
+    .required {
+
+      color: var(--purple-light);
 
     }
 
@@ -1168,19 +671,29 @@
 
       width: 100%;
 
-      padding: 16px;
+      padding: 14px 15px;
+
+      border: 1px solid var(--border);
 
       outline: none;
 
-      border: 1px solid var(--border);
+      border-radius: 0;
 
       background: rgba(255,255,255,.025);
 
       color: var(--white);
 
-      border-radius: 0;
+      font-size: 13px;
 
-      transition: .3s ease;
+      transition: .25s ease;
+
+    }
+
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+
+      color: #4f4b55;
 
     }
 
@@ -1189,16 +702,16 @@
     .field select:focus,
     .field textarea:focus {
 
-      border-color: rgba(147,112,219,.6);
+      border-color: rgba(147,112,219,.65);
 
-      background: rgba(147,112,219,.03);
+      background: rgba(147,112,219,.035);
 
     }
 
 
     .field select option {
 
-      background: #090909;
+      background: #0b0b0c;
 
       color: #fff;
 
@@ -1207,112 +720,248 @@
 
     .field textarea {
 
-      min-height: 160px;
+      min-height: 130px;
 
       resize: vertical;
 
     }
 
 
-    .submit {
+    /* =====================================================
+       CHECKBOXES
+    ===================================================== */
 
-      width: 100%;
+    .checkbox-grid {
 
-      margin-top: 5px;
+      display: grid;
 
-      border: 0;
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 8px;
 
     }
 
 
-    .form-message {
+    .checkbox {
 
-      display: none;
+      position: relative;
 
-      margin-top: 18px;
+    }
 
-      padding: 14px;
 
-      border: 1px solid rgba(147,112,219,.25);
+    .checkbox input {
 
-      color: var(--purple-light);
+      position: absolute;
 
-      font-size: 12px;
+      opacity: 0;
 
-      line-height: 1.6;
+    }
+
+
+    .checkbox label {
+
+      display: flex !important;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 13px;
+
+      border: 1px solid var(--border);
+
+      cursor: pointer;
+
+      color: #aaa5af !important;
+
+      font-size: 11px !important;
+
+      letter-spacing: 0 !important;
+
+      font-weight: 400 !important;
+
+      transition: .25s ease;
+
+    }
+
+
+    .checkbox label::before {
+
+      content: "";
+
+      width: 13px;
+      height: 13px;
+
+      border: 1px solid #55515b;
+
+      flex-shrink: 0;
+
+    }
+
+
+    .checkbox input:checked + label {
+
+      border-color: rgba(147,112,219,.55);
+
+      background: rgba(147,112,219,.06);
+
+      color: var(--white) !important;
+
+    }
+
+
+    .checkbox input:checked + label::before {
+
+      border-color: var(--purple);
+
+      background: var(--purple);
+
+      box-shadow:
+        inset 0 0 0 3px var(--black);
 
     }
 
 
     /* =====================================================
-       FINAL
+       NAVIGATION
     ===================================================== */
 
-    .final {
+    .form-navigation {
 
-      max-width: 1500px;
+      margin-top: 35px;
 
-      margin: auto;
+      padding-top: 25px;
 
-      padding: 0 5% 150px;
+      border-top: 1px solid var(--border);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 10px;
 
     }
 
 
-    .final-box {
-
-      padding: 100px 8%;
-
-      text-align: center;
+    .btn {
 
       border: 1px solid var(--border);
 
-      background:
+      padding: 15px 20px;
 
-        radial-gradient(
+      background: transparent;
 
-          circle at center,
+      color: var(--white);
 
-          rgba(147,112,219,.11),
+      font-size: 10px;
 
-          transparent 65%
+      font-weight: 600;
 
-        );
+      letter-spacing: .1em;
+
+      transition: .25s ease;
 
     }
 
 
-    .final-box h2 {
+    .btn:hover {
 
-      max-width: 1000px;
+      border-color: rgba(147,112,219,.55);
+
+    }
+
+
+    .btn-primary {
+
+      background: var(--purple);
+
+      border-color: var(--purple);
+
+      color: #fff;
+
+    }
+
+
+    .btn-primary:hover {
+
+      background: var(--purple-light);
+
+      border-color: var(--purple-light);
+
+      transform: translateY(-2px);
+
+    }
+
+
+    .btn:disabled {
+
+      opacity: .35;
+
+      cursor: not-allowed;
+
+      transform: none;
+
+    }
+
+
+    /* =====================================================
+       SUCCESS
+    ===================================================== */
+
+    .success {
+
+      display: none;
+
+      padding: 60px 30px;
+
+      text-align: center;
+
+    }
+
+
+    .success-mark {
+
+      width: 60px;
+      height: 60px;
 
       margin: auto;
 
-      font-family: var(--font-display);
+      border: 1px solid var(--purple);
 
-      font-size: clamp(3.5rem, 7vw, 7rem);
+      display: flex;
 
-      line-height: .88;
+      align-items: center;
+      justify-content: center;
 
-      letter-spacing: -.065em;
+      color: var(--purple-light);
 
-    }
+      font-family: var(--display);
 
-
-    .final-box h2 span {
-
-      color: var(--purple);
+      font-size: 22px;
 
     }
 
 
-    .final-box p {
+    .success h2 {
 
-      max-width: 650px;
+      margin-top: 25px;
 
-      margin: 30px auto 35px;
+      font-family: var(--display);
+
+      font-size: 35px;
+
+    }
+
+
+    .success p {
+
+      max-width: 500px;
+
+      margin: 15px auto 0;
 
       color: var(--muted);
+
+      font-size: 13px;
 
       line-height: 1.8;
 
@@ -1325,13 +974,11 @@
 
     footer {
 
-      max-width: 1500px;
+      max-width: 850px;
 
       margin: auto;
 
-      padding: 35px 5%;
-
-      border-top: 1px solid var(--border);
+      padding: 25px 20px 45px;
 
       display: flex;
 
@@ -1339,11 +986,11 @@
 
       gap: 20px;
 
-      color: #55515d;
+      color: #4f4a56;
 
-      font-size: 9px;
+      font-size: 8px;
 
-      letter-spacing: .1em;
+      letter-spacing: .12em;
 
     }
 
@@ -1352,187 +999,92 @@
        RESPONSIVE
     ===================================================== */
 
-    @media (max-width: 900px) {
+    @media (max-width: 750px) {
 
-      .value-grid {
+      .type-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+      }
+
+
+      .fields {
 
         grid-template-columns: 1fr;
 
       }
 
 
-      .form-layout {
+      .field.full {
+
+        grid-column: auto;
+
+      }
+
+
+      .checkbox-grid {
 
         grid-template-columns: 1fr;
-
-        gap: 60px;
-
-      }
-
-
-      .looking-item {
-
-        grid-template-columns: 50px 1fr;
-
-      }
-
-
-      .looking-tag {
-
-        grid-column: 2;
-
-        text-align: left;
 
       }
 
     }
 
 
-    @media (max-width: 650px) {
+    @media (max-width: 520px) {
 
-      .header {
+      main {
 
-        padding: 22px 5%;
+        padding-top: 55px;
 
       }
 
 
-      .header-status {
+      .header-label {
 
         display: none;
 
       }
 
 
-      .hero {
+      .intro h1 {
 
-        padding-top: 140px;
-
-      }
-
-
-      .hero h1 {
-
-        font-size: 4.2rem;
+        font-size: 3.6rem;
 
       }
 
 
-      .hero-description {
+      .type-grid {
 
-        font-size: 15px;
-
-      }
-
-
-      .partner-grid {
-
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
 
       }
 
 
-      .section {
+      .form-header {
 
-        padding-top: 90px;
-
-        padding-bottom: 90px;
+        padding: 20px;
 
       }
 
 
-      .ecosystem {
+      form {
 
-        min-height: 580px;
-
-      }
-
-
-      .ecosystem-core {
-
-        width: 145px;
-
-        height: 145px;
+        padding: 25px 20px 20px;
 
       }
 
 
-      .ecosystem-core strong {
+      .form-navigation {
 
-        font-size: 19px;
-
-      }
-
-
-      .ecosystem-node {
-
-        width: 105px;
-
-        height: 105px;
+        flex-direction: column-reverse;
 
       }
 
 
-      .ecosystem-node strong {
+      .form-navigation .btn {
 
-        font-size: 12px;
-
-      }
-
-
-      .ecosystem-node small {
-
-        font-size: 6px;
-
-      }
-
-
-      .node-a {
-
-        top: 7%;
-
-        left: 4%;
-
-      }
-
-
-      .node-b {
-
-        top: 7%;
-
-        right: 4%;
-
-      }
-
-
-      .node-c {
-
-        bottom: 7%;
-
-        left: 4%;
-
-      }
-
-
-      .node-d {
-
-        bottom: 7%;
-
-        right: 4%;
-
-      }
-
-
-      .form-box {
-
-        padding: 25px;
-
-      }
-
-
-      .final-box {
-
-        padding: 70px 25px;
+        width: 100%;
 
       }
 
@@ -1554,20 +1106,10 @@
 
 
   <!-- =====================================================
-       BACKGROUND
-  ====================================================== -->
-
-  <canvas id="gridCanvas"></canvas>
-
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-
-
-  <!-- =====================================================
        HEADER
   ====================================================== -->
 
-  <header class="header">
+  <header>
 
     <div class="header-inner">
 
@@ -1576,21 +1118,17 @@
         class="brand"
       >
 
-        <span class="brand-mark">M</span>
-
-        <span>
-          MEISOPHANT
+        <span class="brand-mark">
+          M
         </span>
+
+        MEISOPHANT
 
       </a>
 
 
-      <div class="header-status">
-
-        <span class="status-dot"></span>
-
-        OPEN TO PARTNERSHIPS
-
+      <div class="header-label">
+        PARTNERSHIP INQUIRY
       </div>
 
     </div>
@@ -1598,911 +1136,1706 @@
   </header>
 
 
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
   <main>
 
+    <div class="container">
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
 
-    <section class="hero">
+      <!-- =================================================
+           INTRO
+      ================================================== -->
 
-      <div class="eyebrow">
-        PARTNERSHIP
-      </div>
+      <div class="intro">
 
-
-      <h1>
-
-        Build the
-        <span>future</span>
-        with us.
-
-      </h1>
-
-
-      <p class="hero-description">
-
-        Meisophant is building a technology ecosystem where
-        ideas can become products, products can become ventures,
-        and ventures can create lasting value.
-
-        <br><br>
-
-        We're looking for the people, organizations, institutions,
-        and investors who want to build alongside us.
-
-      </p>
-
-
-      <div class="hero-actions">
-
-        <a
-          href="#conversation"
-          class="btn btn-primary"
-        >
-          Start a Conversation
-          <span>↘</span>
-        </a>
-
-
-        <a
-          href="#ecosystem"
-          class="btn btn-secondary"
-        >
-          Explore the Ecosystem
-          <span>↓</span>
-        </a>
-
-      </div>
-
-
-      <div class="hero-index">
-        MEISOPHANT / PARTNERSHIP / 001
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         WHO WE PARTNER WITH
-    ====================================================== -->
-
-    <section class="section">
-
-      <div class="section-label">
-        01 / WHO WE PARTNER WITH
-      </div>
-
-
-      <h2 class="section-title">
-
-        Different strengths.
-        <span>Shared ambition.</span>
-
-      </h2>
-
-
-      <p class="section-description">
-
-        We believe ambitious technology is rarely built by one
-        person or one organization alone. The right partnership
-        can bring together capital, knowledge, infrastructure,
-        technology, networks, and execution.
-
-      </p>
-
-
-      <div class="partner-grid">
-
-
-        <article class="partner-card">
-
-          <div class="card-number">
-            01 / CAPITAL
-          </div>
-
-          <div>
-
-            <h3>
-              Investors &
-              <span>Capital Partners</span>
-            </h3>
-
-            <p>
-
-              People and organizations interested in supporting
-              technology products and future ventures with
-              long-term potential.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="partner-card">
-
-          <div class="card-number">
-            02 / INDUSTRY
-          </div>
-
-          <div>
-
-            <h3>
-              Technology &
-              <span>Industry Partners</span>
-            </h3>
-
-            <p>
-
-              Organizations that can contribute technology,
-              infrastructure, expertise, distribution, or
-              strategic capabilities.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="partner-card">
-
-          <div class="card-number">
-            03 / INSTITUTIONS
-          </div>
-
-          <div>
-
-            <h3>
-              Government &
-              <span>Institutions</span>
-            </h3>
-
-            <p>
-
-              Institutions interested in innovation, digital
-              development, technology education, entrepreneurship,
-              and emerging opportunities.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="partner-card">
-
-          <div class="card-number">
-            04 / BUILDERS
-          </div>
-
-          <div>
-
-            <h3>
-              Builders &
-              <span>Collaborators</span>
-            </h3>
-
-            <p>
-
-              Engineers, designers, researchers, creators,
-              entrepreneurs, and specialists who want to
-              contribute to ambitious projects.
-
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         WHAT WE BRING
-    ====================================================== -->
-
-    <section class="section value-section">
-
-      <div class="section-label">
-        02 / THE VALUE OF PARTNERSHIP
-      </div>
-
-
-      <h2 class="section-title">
-
-        Bring your strength.
-        <span>We'll bring ours.</span>
-
-      </h2>
-
-
-      <p class="section-description">
-
-        Partnership should create something neither side could
-        create as effectively alone.
-
-      </p>
-
-
-      <div class="value-grid">
-
-
-        <article class="value-card">
-
-          <div class="value-number">
-            01
-          </div>
-
-          <div>
-
-            <h3>
-              Ideas & Product Vision
-            </h3>
-
-            <p>
-
-              We continuously explore problems, technologies,
-              and opportunities that could become useful products
-              and ventures.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="value-card">
-
-          <div class="value-number">
-            02
-          </div>
-
-          <div>
-
-            <h3>
-              Technology & Building
-            </h3>
-
-            <p>
-
-              From software platforms to future hardware concepts,
-              our focus is turning concepts into things people
-              can actually use.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="value-card">
-
-          <div class="value-number">
-            03
-          </div>
-
-          <div>
-
-            <h3>
-              Long-Term Ambition
-            </h3>
-
-            <p>
-
-              We're not only thinking about individual projects.
-              We're building the foundation for an ecosystem
-              capable of producing many of them.
-
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         ECOSYSTEM
-    ====================================================== -->
-
-    <section
-      class="section"
-      id="ecosystem"
-    >
-
-      <div class="section-label">
-        03 / THE MEISOPHANT ECOSYSTEM
-      </div>
-
-
-      <h2 class="section-title">
-
-        One foundation.
-        <span>Many futures.</span>
-
-      </h2>
-
-
-      <p class="section-description">
-
-        Meisophant is intended to become a foundation from which
-        different technologies, products, and companies can grow.
-
-      </p>
-
-
-      <div class="ecosystem">
-
-
-        <div class="ecosystem-grid"></div>
-
-
-        <div class="ecosystem-core">
-
-          <div>
-
-            <strong>
-              MEISOPHANT
-            </strong>
-
-            <small>
-              THE FOUNDATION
-            </small>
-
-          </div>
-
+        <div class="eyebrow">
+          PARTNERSHIP
         </div>
 
 
-
-        <div class="ecosystem-node node-a">
-
-          <div>
-
-            <strong>
-              SOFTWARE
-            </strong>
-
-            <small>
-              PLATFORMS
-            </small>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="ecosystem-node node-b">
-
-          <div>
-
-            <strong>
-              HARDWARE
-            </strong>
-
-            <small>
-              DEVICES
-            </small>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="ecosystem-node node-c">
-
-          <div>
-
-            <strong>
-              EDUCATION
-            </strong>
-
-            <small>
-              KNOWLEDGE
-            </small>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="ecosystem-node node-d">
-
-          <div>
-
-            <strong>
-              NEW VENTURES
-            </strong>
-
-            <small>
-              COMPANIES
-            </small>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         WHAT WE ARE LOOKING FOR
-    ====================================================== -->
-
-    <section class="section">
-
-      <div class="section-label">
-        04 / WHAT WE ARE LOOKING FOR
-      </div>
-
-
-      <h2 class="section-title">
-
-        The right
-        <span>resources.</span>
-
-      </h2>
-
-
-      <p class="section-description">
-
-        Different stages of the Meisophant journey will require
-        different kinds of support.
-
-      </p>
-
-
-      <div class="looking-list">
-
-
-        <div class="looking-item">
-
-          <div class="looking-number">
-            01
-          </div>
-
-          <div>
-
-            <h3>
-              Strategic Capital
-            </h3>
-
-            <p>
-              Resources to develop promising products,
-              infrastructure, and future ventures.
-            </p>
-
-          </div>
-
-          <div class="looking-tag">
-            INVESTMENT
-          </div>
-
-        </div>
-
-
-
-        <div class="looking-item">
-
-          <div class="looking-number">
-            02
-          </div>
-
-          <div>
-
-            <h3>
-              Infrastructure
-            </h3>
-
-            <p>
-              Technology, facilities, equipment, cloud resources,
-              and other infrastructure needed to build.
-            </p>
-
-          </div>
-
-          <div class="looking-tag">
-            CAPABILITY
-          </div>
-
-        </div>
-
-
-
-        <div class="looking-item">
-
-          <div class="looking-number">
-            03
-          </div>
-
-          <div>
-
-            <h3>
-              Expertise
-            </h3>
-
-            <p>
-              Experienced people who can help transform ambitious
-              concepts into sustainable organizations.
-            </p>
-
-          </div>
-
-          <div class="looking-tag">
-            KNOWLEDGE
-          </div>
-
-        </div>
-
-
-
-        <div class="looking-item">
-
-          <div class="looking-number">
-            04
-          </div>
-
-          <div>
-
-            <h3>
-              Access & Networks
-            </h3>
-
-            <p>
-              Partnerships that open doors to markets,
-              institutions, communities, and opportunities.
-            </p>
-
-          </div>
-
-          <div class="looking-tag">
-            REACH
-          </div>
-
-        </div>
-
-
-
-        <div class="looking-item">
-
-          <div class="looking-number">
-            05
-          </div>
-
-          <div>
-
-            <h3>
-              People Who Believe
-            </h3>
-
-            <p>
-              Partners who are willing to think beyond the next
-              transaction and help build something enduring.
-            </p>
-
-          </div>
-
-          <div class="looking-tag">
-            COMMUNITY
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CONVERSATION
-    ====================================================== -->
-
-    <section
-      class="section form-section"
-      id="conversation"
-    >
-
-      <div class="section-label">
-        05 / START A CONVERSATION
-      </div>
-
-
-      <div class="form-layout">
-
-
-        <div class="form-side">
-
-          <h3>
-
-            Tell us what
-            <span>you see.</span>
-
-          </h3>
-
-
-          <p>
-
-            If you see an opportunity for Meisophant, a venture,
-            a technology, or a partnership, tell us about it.
-
-            <br><br>
-
-            We are interested in conversations that can lead
-            somewhere meaningful.
-
-          </p>
-
-
-          <div class="form-contact">
-
-            <div class="form-contact-label">
-              DIRECT CONTACT
-            </div>
-
-            <a href="mailto:info@meisophant.name.ng">
-              info@meisophant.name.ng
-            </a>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="form-box">
-
-          <h4>
-            Partnership Inquiry
-          </h4>
-
-          <p>
-            Share the opportunity and how you believe we
-            could work together.
-          </p>
-
-
-          <form
-            class="form"
-            id="partnershipForm"
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-          >
-
-
-            <div class="field">
-
-              <label for="name">
-                NAME
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                required
-              >
-
-            </div>
-
-
-
-            <div class="field">
-
-              <label for="organization">
-                ORGANIZATION
-              </label>
-
-              <input
-                type="text"
-                id="organization"
-                name="organization"
-                placeholder="Company / Institution / Organization"
-              >
-
-            </div>
-
-
-
-            <div class="field">
-
-              <label for="email">
-                EMAIL
-              </label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="you@example.com"
-                required
-              >
-
-            </div>
-
-
-
-            <div class="field">
-
-              <label for="type">
-                PARTNERSHIP TYPE
-              </label>
-
-              <select
-                id="type"
-                name="partnership_type"
-                required
-              >
-
-                <option
-                  value=""
-                  disabled
-                  selected
-                >
-                  Select one
-                </option>
-
-                <option value="investment">
-                  Investment / Capital
-                </option>
-
-                <option value="strategic">
-                  Strategic Partnership
-                </option>
-
-                <option value="government">
-                  Government / Institution
-                </option>
-
-                <option value="technology">
-                  Technology Partnership
-                </option>
-
-                <option value="collaboration">
-                  Collaboration
-                </option>
-
-                <option value="venture">
-                  Venture / Project
-                </option>
-
-                <option value="other">
-                  Other
-                </option>
-
-              </select>
-
-            </div>
-
-
-
-            <div class="field">
-
-              <label for="message">
-                TELL US ABOUT IT
-              </label>
-
-              <textarea
-                id="message"
-                name="message"
-                placeholder="What would you like to build, support, or explore with Meisophant?"
-                required
-              ></textarea>
-
-            </div>
-
-
-
-            <button
-              type="submit"
-              class="btn btn-primary submit"
-            >
-
-              Submit Partnership Inquiry
-
-              <span>
-                ↗
-              </span>
-
-            </button>
-
-
-            <div
-              class="form-message"
-              id="formMessage"
-            >
-              Your inquiry has been prepared. Thank you for
-              reaching out to Meisophant.
-
-            </div>
-
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FINAL CTA
-    ====================================================== -->
-
-    <section class="final">
-
-      <div class="final-box">
-
-        <div class="section-label">
-          06 / THE OPPORTUNITY
-        </div>
-
-
-        <h2>
-
-          The future is
-          <span>built together.</span>
-
-        </h2>
+        <h1>
+          Let's build
+          <span>together.</span>
+        </h1>
 
 
         <p>
-
-          We don't know exactly what every future Meisophant
-          venture will become.
-
-          That's precisely why we're building the foundation
-          for people with the right ideas, resources, and
-          ambition to build alongside us.
-
+          Tell us who you are and provide the information
+          necessary for us to understand your proposed
+          partnership.
         </p>
-
-
-        <a
-          href="#conversation"
-          class="btn btn-primary"
-        >
-
-          Start the Conversation
-
-          <span>
-            ↑
-          </span>
-
-        </a>
 
       </div>
 
-    </section>
+
+<form
+  id="partnershipForm"
+  action="https://formspree.io/f/myezeezq"
+  method="POST"
+>
+
+      <!-- =================================================
+           PARTNER TYPE
+      ================================================== -->
+
+      <div class="type-section">
+
+        <span class="field-label">
+          I AM REPRESENTING <span class="required">*</span>
+        </span>
+
+
+        <div class="type-grid">
+
+
+          <div class="type-option">
+
+            <input
+              type="radio"
+              name="partnerType"
+              id="individual"
+              value="individual"
+            >
+
+            <label for="individual">
+
+              <span class="type-number">
+                01
+              </span>
+
+              <span class="type-name">
+                Individual
+              </span>
+
+            </label>
+
+          </div>
+
+
+
+          <div class="type-option">
+
+            <input
+              type="radio"
+              name="partnerType"
+              id="organization"
+              value="organization"
+            >
+
+            <label for="organization">
+
+              <span class="type-number">
+                02
+              </span>
+
+              <span class="type-name">
+                Organization
+              </span>
+
+            </label>
+
+          </div>
+
+
+
+          <div class="type-option">
+
+            <input
+              type="radio"
+              name="partnerType"
+              id="institution"
+              value="institution"
+            >
+
+            <label for="institution">
+
+              <span class="type-number">
+                03
+              </span>
+
+              <span class="type-name">
+                Institution
+              </span>
+
+            </label>
+
+          </div>
+
+
+
+          <div class="type-option">
+
+            <input
+              type="radio"
+              name="partnerType"
+              id="government"
+              value="government"
+            >
+
+            <label for="government">
+
+              <span class="type-number">
+                04
+              </span>
+
+              <span class="type-name">
+                Government
+              </span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           FORM PANEL
+      ================================================== -->
+
+      <div
+        class="form-panel"
+        id="formPanel"
+        style="display:none;"
+      >
+
+
+        <div class="form-header">
+
+          <h2 id="formTitle">
+            Partnership Inquiry
+          </h2>
+
+
+          <div
+            class="form-progress"
+            id="progress"
+          >
+            STEP 1
+          </div>
+
+        </div>
+
+
+
+        <form
+          id="partnershipForm"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+
+
+          <!-- =============================================
+               INDIVIDUAL
+          ============================================== -->
+
+          <div
+            class="form-section"
+            data-type="individual"
+          >
+
+            <div class="section-heading">
+
+              <h3>
+                About You
+              </h3>
+
+              <p>
+                Help us understand who you are and why
+                you want to partner with Meisophant.
+              </p>
+
+            </div>
+
+
+            <div class="fields">
+
+
+              <div class="field">
+
+                <label>
+                  FULL NAME <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="individual_full_name"
+                  placeholder="Your full name"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PROFESSIONAL TITLE / ROLE
+                </label>
+
+                <input
+                  type="text"
+                  name="individual_role"
+                  placeholder="Founder, Investor, Engineer..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  EMAIL <span class="required">*</span>
+                </label>
+
+                <input
+                  type="email"
+                  name="individual_email"
+                  placeholder="you@example.com"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PHONE / WHATSAPP
+                </label>
+
+                <input
+                  type="tel"
+                  name="individual_phone"
+                  placeholder="+234..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  COUNTRY <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="individual_country"
+                  placeholder="Country"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  WEBSITE / PROFESSIONAL PROFILE
+                </label>
+
+                <input
+                  type="url"
+                  name="individual_website"
+                  placeholder="https://..."
+                >
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT DO YOU DO? <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="individual_background"
+                  placeholder="Briefly describe your professional background, expertise, or activities."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT WOULD YOU LIKE TO PARTNER ON? <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="individual_proposal"
+                  placeholder="Describe the opportunity or partnership you have in mind."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT DO YOU BRING TO THE PARTNERSHIP?
+                </label>
+
+                <textarea
+                  name="individual_contribution"
+                  placeholder="Capital, expertise, technology, network, infrastructure, market access, etc."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT WOULD YOU NEED FROM MEISOPHANT?
+                </label>
+
+                <textarea
+                  name="individual_request"
+                  placeholder="What would you like Meisophant to contribute?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  EXPECTED TIMELINE
+                </label>
+
+                <select name="individual_timeline">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    Immediate
+                  </option>
+
+                  <option>
+                    Within 3 months
+                  </option>
+
+                  <option>
+                    3–6 months
+                  </option>
+
+                  <option>
+                    6–12 months
+                  </option>
+
+                  <option>
+                    Long-term / Exploratory
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  HOW DID YOU FIND MEISOPHANT?
+                </label>
+
+                <select name="individual_source">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    Search engine
+                  </option>
+
+                  <option>
+                    Social media
+                  </option>
+
+                  <option>
+                    Referral
+                  </option>
+
+                  <option>
+                    Event
+                  </option>
+
+                  <option>
+                    Direct research
+                  </option>
+
+                  <option>
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =============================================
+               ORGANIZATION
+          ============================================== -->
+
+          <div
+            class="form-section"
+            data-type="organization"
+          >
+
+            <div class="section-heading">
+
+              <h3>
+                Organization Details
+              </h3>
+
+              <p>
+                Tell us about the organization and the
+                partnership you're proposing.
+              </p>
+
+            </div>
+
+
+            <div class="fields">
+
+
+              <div class="field">
+
+                <label>
+                  ORGANIZATION NAME <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="organization_name"
+                  placeholder="Company / organization name"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  ORGANIZATION TYPE <span class="required">*</span>
+                </label>
+
+                <select name="organization_type">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    Private Company
+                  </option>
+
+                  <option>
+                    Startup
+                  </option>
+
+                  <option>
+                    Nonprofit
+                  </option>
+
+                  <option>
+                    Investment Firm
+                  </option>
+
+                  <option>
+                    Technology Company
+                  </option>
+
+                  <option>
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  YOUR NAME <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="organization_contact_name"
+                  placeholder="Your full name"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  YOUR ROLE <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="organization_contact_role"
+                  placeholder="CEO, Director, Partnerships Lead..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  OFFICIAL EMAIL <span class="required">*</span>
+                </label>
+
+                <input
+                  type="email"
+                  name="organization_email"
+                  placeholder="name@company.com"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PHONE / WHATSAPP
+                </label>
+
+                <input
+                  type="tel"
+                  name="organization_phone"
+                  placeholder="+234..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  COUNTRY <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="organization_country"
+                  placeholder="Country"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  WEBSITE <span class="required">*</span>
+                </label>
+
+                <input
+                  type="url"
+                  name="organization_website"
+                  placeholder="https://..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  YEAR ESTABLISHED
+                </label>
+
+                <input
+                  type="number"
+                  name="organization_year"
+                  placeholder="2020"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  COMPANY SIZE
+                </label>
+
+                <select name="organization_size">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    1–10
+                  </option>
+
+                  <option>
+                    11–50
+                  </option>
+
+                  <option>
+                    51–200
+                  </option>
+
+                  <option>
+                    201–500
+                  </option>
+
+                  <option>
+                    500+
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT DOES YOUR ORGANIZATION DO? <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="organization_description"
+                  placeholder="Describe your organization's products, services, market, or activities."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  PROPOSED PARTNERSHIP <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="organization_proposal"
+                  placeholder="What exactly are you proposing that we build, develop, or work on together?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT ARE YOU BRINGING?
+                </label>
+
+                <textarea
+                  name="organization_contribution"
+                  placeholder="Capital, technology, infrastructure, distribution, expertise, customers, market access, etc."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT ARE YOU SEEKING FROM MEISOPHANT?
+                </label>
+
+                <textarea
+                  name="organization_request"
+                  placeholder="What would you like Meisophant to contribute?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  PREVIOUS RELEVANT PARTNERSHIPS
+                </label>
+
+                <textarea
+                  name="organization_partnerships"
+                  placeholder="Optional — tell us about relevant partnerships, projects, or collaborations."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PROPOSED TIMELINE
+                </label>
+
+                <select name="organization_timeline">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    Immediate
+                  </option>
+
+                  <option>
+                    Within 3 months
+                  </option>
+
+                  <option>
+                    3–6 months
+                  </option>
+
+                  <option>
+                    6–12 months
+                  </option>
+
+                  <option>
+                    Exploratory
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PARTNERSHIP STAGE
+                </label>
+
+                <select name="organization_stage">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    Initial idea
+                  </option>
+
+                  <option>
+                    Proposal ready
+                  </option>
+
+                  <option>
+                    Existing project
+                  </option>
+
+                  <option>
+                    Existing business relationship
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =============================================
+               INSTITUTION
+          ============================================== -->
+
+          <div
+            class="form-section"
+            data-type="institution"
+          >
+
+            <div class="section-heading">
+
+              <h3>
+                Institution Details
+              </h3>
+
+              <p>
+                Provide the information required to understand
+                your institution and the proposed engagement.
+              </p>
+
+            </div>
+
+
+            <div class="fields">
+
+
+              <div class="field">
+
+                <label>
+                  INSTITUTION NAME <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="institution_name"
+                  placeholder="Institution name"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  INSTITUTION TYPE <span class="required">*</span>
+                </label>
+
+                <select name="institution_type">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    University
+                  </option>
+
+                  <option>
+                    School
+                  </option>
+
+                  <option>
+                    Research Institution
+                  </option>
+
+                  <option>
+                    Foundation
+                  </option>
+
+                  <option>
+                    Development Organization
+                  </option>
+
+                  <option>
+                    Professional Body
+                  </option>
+
+                  <option>
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  REPRESENTATIVE NAME <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="institution_contact"
+                  placeholder="Full name"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  POSITION / TITLE <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="institution_position"
+                  placeholder="Director, Registrar, Coordinator..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  OFFICIAL EMAIL <span class="required">*</span>
+                </label>
+
+                <input
+                  type="email"
+                  name="institution_email"
+                  placeholder="name@institution.edu"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PHONE
+                </label>
+
+                <input
+                  type="tel"
+                  name="institution_phone"
+                  placeholder="+234..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  COUNTRY <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="institution_country"
+                  placeholder="Country"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  WEBSITE
+                </label>
+
+                <input
+                  type="url"
+                  name="institution_website"
+                  placeholder="https://..."
+                >
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  INSTITUTION'S MISSION / FUNCTION <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="institution_mission"
+                  placeholder="Briefly describe the institution's purpose and activities."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  PROPOSED COLLABORATION <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="institution_proposal"
+                  placeholder="Describe the project, initiative, research, technology, or program you want to collaborate on."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  EXPECTED OUTCOME <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="institution_outcome"
+                  placeholder="What should this partnership achieve?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT CAN YOUR INSTITUTION PROVIDE?
+                </label>
+
+                <textarea
+                  name="institution_contribution"
+                  placeholder="Facilities, expertise, funding, research, access, infrastructure, networks, etc."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  WHAT DO YOU NEED FROM MEISOPHANT?
+                </label>
+
+                <textarea
+                  name="institution_request"
+                  placeholder="Technology, development, expertise, funding, implementation, etc."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  EXPECTED START DATE
+                </label>
+
+                <input
+                  type="date"
+                  name="institution_start"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  EXPECTED DURATION
+                </label>
+
+                <input
+                  type="text"
+                  name="institution_duration"
+                  placeholder="e.g. 6 months"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =============================================
+               GOVERNMENT
+          ============================================== -->
+
+          <div
+            class="form-section"
+            data-type="government"
+          >
+
+            <div class="section-heading">
+
+              <h3>
+                Government Engagement
+              </h3>
+
+              <p>
+                Provide the information required for us to
+                understand the proposed government engagement.
+              </p>
+
+            </div>
+
+
+            <div class="fields">
+
+
+              <div class="field">
+
+                <label>
+                  MINISTRY / DEPARTMENT / AGENCY <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="government_entity"
+                  placeholder="Official government entity"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  LEVEL OF GOVERNMENT <span class="required">*</span>
+                </label>
+
+                <select name="government_level">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    Federal
+                  </option>
+
+                  <option>
+                    State
+                  </option>
+
+                  <option>
+                    Local Government
+                  </option>
+
+                  <option>
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  REPRESENTATIVE NAME <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="government_contact"
+                  placeholder="Full name"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  OFFICIAL POSITION <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="government_position"
+                  placeholder="Official title"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  OFFICIAL EMAIL <span class="required">*</span>
+                </label>
+
+                <input
+                  type="email"
+                  name="government_email"
+                  placeholder="Official government email"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PHONE
+                </label>
+
+                <input
+                  type="tel"
+                  name="government_phone"
+                  placeholder="+234..."
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  STATE / REGION <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  name="government_region"
+                  placeholder="State / Region"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  OFFICIAL WEBSITE
+                </label>
+
+                <input
+                  type="url"
+                  name="government_website"
+                  placeholder="https://..."
+                >
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  AREA OF ENGAGEMENT <span class="required">*</span>
+                </label>
+
+                <div class="checkbox-grid">
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-tech"
+                      name="government_area[]"
+                      value="Technology"
+                    >
+
+                    <label for="gov-tech">
+                      Technology
+                    </label>
+
+                  </div>
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-digital"
+                      name="government_area[]"
+                      value="Digital Transformation"
+                    >
+
+                    <label for="gov-digital">
+                      Digital Transformation
+                    </label>
+
+                  </div>
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-education"
+                      name="government_area[]"
+                      value="Education"
+                    >
+
+                    <label for="gov-education">
+                      Education
+                    </label>
+
+                  </div>
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-youth"
+                      name="government_area[]"
+                      value="Youth Development"
+                    >
+
+                    <label for="gov-youth">
+                      Youth Development
+                    </label>
+
+                  </div>
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-innovation"
+                      name="government_area[]"
+                      value="Innovation"
+                    >
+
+                    <label for="gov-innovation">
+                      Innovation
+                    </label>
+
+                  </div>
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-infrastructure"
+                      name="government_area[]"
+                      value="Infrastructure"
+                    >
+
+                    <label for="gov-infrastructure">
+                      Infrastructure
+                    </label>
+
+                  </div>
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-research"
+                      name="government_area[]"
+                      value="Research"
+                    >
+
+                    <label for="gov-research">
+                      Research
+                    </label>
+
+                  </div>
+
+
+                  <div class="checkbox">
+
+                    <input
+                      type="checkbox"
+                      id="gov-economic"
+                      name="government_area[]"
+                      value="Economic Development"
+                    >
+
+                    <label for="gov-economic">
+                      Economic Development
+                    </label>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  PROPOSED INITIATIVE <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="government_proposal"
+                  placeholder="Describe the initiative, program, technology, project, or engagement you are proposing."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  PUBLIC OBJECTIVE <span class="required">*</span>
+                </label>
+
+                <textarea
+                  name="government_objective"
+                  placeholder="What public or institutional objective would the partnership address?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  EXPECTED OUTCOMES
+                </label>
+
+                <textarea
+                  name="government_outcomes"
+                  placeholder="What measurable outcomes are expected?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  RESOURCES / SUPPORT AVAILABLE
+                </label>
+
+                <textarea
+                  name="government_resources"
+                  placeholder="Funding, facilities, personnel, infrastructure, access, regulatory support, etc."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  EXPECTED ROLE OF MEISOPHANT
+                </label>
+
+                <textarea
+                  name="government_meisophant_role"
+                  placeholder="What role would you like Meisophant to play?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  EXPECTED START DATE
+                </label>
+
+                <input
+                  type="date"
+                  name="government_start"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  PROCUREMENT / APPROVAL PROCESS
+                </label>
+
+                <textarea
+                  name="government_process"
+                  placeholder="Briefly describe any relevant procurement, approval, or engagement process."
+                ></textarea>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =============================================
+               COMMON FINAL SECTION
+          ============================================== -->
+
+          <div
+            class="form-section"
+            data-type="final"
+          >
+
+            <div class="section-heading">
+
+              <h3>
+                Final Details
+              </h3>
+
+              <p>
+                A few final details before submitting your
+                partnership inquiry.
+              </p>
+
+            </div>
+
+
+            <div class="fields">
+
+
+              <div class="field full">
+
+                <label>
+                  ADDITIONAL INFORMATION
+                </label>
+
+                <textarea
+                  name="additional_information"
+                  placeholder="Anything else we should know?"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  SUPPORTING LINK
+                </label>
+
+                <input
+                  type="url"
+                  name="supporting_link"
+                  placeholder="Link to proposal, company profile, document, presentation, etc."
+                >
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  PREFERRED CONTACT METHOD
+                </label>
+
+                <select name="preferred_contact">
+
+                  <option>
+                    Email
+                  </option>
+
+                  <option>
+                    Phone
+                  </option>
+
+                  <option>
+                    WhatsApp
+                  </option>
+
+                  <option>
+                    Video Meeting
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  ANYTHING CONFIDENTIAL WE SHOULD KNOW?
+                </label>
+
+                <textarea
+                  name="confidential_note"
+                  placeholder="Do not include passwords, financial account information, or other highly sensitive credentials."
+                ></textarea>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label>
+                  CONFIRMATION <span class="required">*</span>
+                </label>
+
+                <div class="checkbox">
+
+                  <input
+                    type="checkbox"
+                    id="confirm"
+                    name="confirmation"
+                    value="I confirm the information provided is accurate."
+                    required
+                  >
+
+                  <label for="confirm">
+                    I confirm that the information provided is accurate
+                    and that I am authorized to submit this inquiry.
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          </form>
+
+
+
+          <!-- =============================================
+               NAVIGATION
+          ============================================== -->
+
+          <div class="form-navigation">
+
+            <button
+              type="button"
+              class="btn"
+              id="backButton"
+              disabled
+            >
+              ← BACK
+            </button>
+
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="nextButton"
+            >
+              CONTINUE →
+            </button>
+
+          </div>
+
+
+        </form>
+
+
+
+        <!-- =============================================
+             SUCCESS
+        ============================================== -->
+
+        <div
+          class="success"
+          id="success"
+        >
+
+          <div class="success-mark">
+            ✓
+          </div>
+
+
+          <h2>
+            Inquiry received.
+          </h2>
+
+
+          <p>
+            Thank you for reaching out to Meisophant.
+            Your partnership inquiry has been submitted
+            for review.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
 
   </main>
 
@@ -2519,11 +2852,7 @@
     </span>
 
     <span>
-      WHERE CREATIVITY MEETS CODE
-    </span>
-
-    <span>
-      A MEISOPHANT COMPANY
+      PARTNERSHIP INQUIRY
     </span>
 
   </footer>
@@ -2532,224 +2861,359 @@
 
   <!-- =====================================================
        JAVASCRIPT
-  ====================================================== -->
+  ===================================================== -->
 
   <script>
 
-    /* =====================================================
-       GRID BACKGROUND
-    ===================================================== */
-
-    const canvas =
-      document.getElementById("gridCanvas");
-
-    const ctx =
-      canvas.getContext("2d");
-
-
-    function resizeCanvas() {
-
-      canvas.width =
-        window.innerWidth *
-        window.devicePixelRatio;
-
-      canvas.height =
-        window.innerHeight *
-        window.devicePixelRatio;
-
-      canvas.style.width =
-        window.innerWidth + "px";
-
-      canvas.style.height =
-        window.innerHeight + "px";
-
-      ctx.scale(
-        window.devicePixelRatio,
-        window.devicePixelRatio
+    const typeInputs =
+      document.querySelectorAll(
+        'input[name="partnerType"]'
       );
 
-    }
+    const formPanel =
+      document.getElementById("formPanel");
 
+    const formTitle =
+      document.getElementById("formTitle");
 
-    function drawGrid() {
+    const progress =
+      document.getElementById("progress");
 
-      const width =
-        window.innerWidth;
-
-      const height =
-        window.innerHeight;
-
-      const spacing = 55;
-
-
-      ctx.clearRect(
-        0,
-        0,
-        width,
-        height
+    const formSections =
+      document.querySelectorAll(
+        ".form-section"
       );
-
-
-      ctx.strokeStyle =
-        "rgba(147,112,219,0.045)";
-
-      ctx.lineWidth = 1;
-
-
-      for (
-        let x = 0;
-        x <= width;
-        x += spacing
-      ) {
-
-        ctx.beginPath();
-
-        ctx.moveTo(x, 0);
-
-        ctx.lineTo(x, height);
-
-        ctx.stroke();
-
-      }
-
-
-      for (
-        let y = 0;
-        y <= height;
-        y += spacing
-      ) {
-
-        ctx.beginPath();
-
-        ctx.moveTo(0, y);
-
-        ctx.lineTo(width, y);
-
-        ctx.stroke();
-
-      }
-
-    }
-
-
-    resizeCanvas();
-    drawGrid();
-
-
-    window.addEventListener(
-      "resize",
-      () => {
-
-        resizeCanvas();
-        drawGrid();
-
-      }
-    );
-
-
-
-    /* =====================================================
-       FORM INTERACTION
-    ====================================================== */
 
     const form =
-      document.getElementById("partnershipForm");
+      document.getElementById(
+        "partnershipForm"
+      );
 
-    const formMessage =
-      document.getElementById("formMessage");
+    const backButton =
+      document.getElementById(
+        "backButton"
+      );
+
+    const nextButton =
+      document.getElementById(
+        "nextButton"
+      );
+
+    const success =
+      document.getElementById(
+        "success"
+      );
 
 
-    form.addEventListener(
-      "submit",
-      function () {
+    let selectedType = null;
 
-        const submitButton =
-          form.querySelector(".submit");
+    let currentStep = 0;
 
 
-        submitButton.innerHTML =
-          "Sending...";
+    const titles = {
+
+      individual:
+        "Individual Partnership",
+
+      organization:
+        "Organization Partnership",
+
+      institution:
+        "Institutional Partnership",
+
+      government:
+        "Government Partnership"
+
+    };
 
 
-        setTimeout(
+    /*
+      Each partner type has its own main section,
+      followed by the common final section.
+    */
+
+
+    typeInputs.forEach(
+      input => {
+
+        input.addEventListener(
+          "change",
           () => {
 
-            formMessage.style.display =
+            selectedType =
+              input.value;
+
+            formPanel.style.display =
               "block";
 
-          },
-          500
+            currentStep = 0;
+
+            showStep();
+
+            formPanel.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }
         );
 
       }
     );
 
 
+    function getSections() {
 
-    /* =====================================================
-       SCROLL REVEAL
-    ====================================================== */
+      if (!selectedType) {
+        return [];
+      }
 
-    const revealElements =
-      document.querySelectorAll(
-        ".partner-card, .value-card, .looking-item, .form-box, .final-box"
+      const mainSection =
+        document.querySelector(
+          `.form-section[data-type="${selectedType}"]`
+        );
+
+      const finalSection =
+        document.querySelector(
+          `.form-section[data-type="final"]`
+        );
+
+      return [
+        mainSection,
+        finalSection
+      ];
+
+    }
+
+
+    function showStep() {
+
+      const sections =
+        getSections();
+
+      if (!sections.length) {
+        return;
+      }
+
+
+      formSections.forEach(
+        section => {
+
+          section.classList.remove(
+            "active"
+          );
+
+        }
       );
 
 
-    revealElements.forEach(
-      element => {
+      sections[currentStep]
+        .classList.add("active");
 
-        element.style.opacity = "0";
 
-        element.style.transform =
-          "translateY(25px)";
+      formTitle.textContent =
+        currentStep === 0
+          ? titles[selectedType]
+          : "Final Details";
 
-        element.style.transition =
-          "opacity .8s ease, transform .8s ease";
+
+      progress.textContent =
+        `STEP ${currentStep + 1} OF ${sections.length}`;
+
+
+      backButton.disabled =
+        currentStep === 0;
+
+
+      if (
+        currentStep ===
+        sections.length - 1
+      ) {
+
+        nextButton.textContent =
+          "SUBMIT INQUIRY →";
+
+      } else {
+
+        nextButton.textContent =
+          "CONTINUE →";
+
+      }
+
+
+      window.scrollTo({
+        top: formPanel.offsetTop - 30,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    function validateCurrentStep() {
+
+      const sections =
+        getSections();
+
+      const current =
+        sections[currentStep];
+
+
+      const fields =
+        current.querySelectorAll(
+          "input, select, textarea"
+        );
+
+
+      let valid = true;
+
+
+      fields.forEach(
+        field => {
+
+          if (
+            field.hasAttribute("required") &&
+            !field.checkValidity()
+          ) {
+
+            field.reportValidity();
+
+            valid = false;
+
+          }
+
+        }
+      );
+
+
+      return valid;
+
+    }
+
+
+    nextButton.addEventListener(
+      "click",
+      () => {
+
+        if (
+          !validateCurrentStep()
+        ) {
+
+          return;
+
+        }
+
+
+        const sections =
+          getSections();
+
+
+        if (
+          currentStep <
+          sections.length - 1
+        ) {
+
+          currentStep++;
+
+          showStep();
+
+        } else {
+
+          submitForm();
+
+        }
 
       }
     );
 
 
-    const observer =
-      new IntersectionObserver(
-        entries => {
+    backButton.addEventListener(
+      "click",
+      () => {
 
-          entries.forEach(
-            entry => {
+        if (currentStep > 0) {
 
-              if (
-                entry.isIntersecting
-              ) {
+          currentStep--;
 
-                entry.target.style.opacity =
-                  "1";
+          showStep();
 
-                entry.target.style.transform =
-                  "translateY(0)";
-
-                observer.unobserve(
-                  entry.target
-                );
-
-              }
-
-            }
-          );
-
-        },
-        {
-          threshold: 0.12
         }
+
+      }
+    );
+
+
+    async function submitForm() {
+
+      nextButton.disabled = true;
+
+      nextButton.textContent =
+        "SUBMITTING...";
+
+
+      const formData =
+        new FormData(form);
+
+
+      formData.append(
+        "partner_type",
+        selectedType
       );
 
 
-    revealElements.forEach(
-      element => observer.observe(element)
-    );
+      try {
+
+        const response =
+          await fetch(
+            form.action,
+            {
+              method: "POST",
+              body: formData,
+              headers: {
+                "Accept":
+                  "application/json"
+              }
+            }
+          );
+
+
+        if (response.ok) {
+
+          form.style.display =
+            "none";
+
+          document.querySelector(
+            ".form-header"
+          ).style.display =
+            "none";
+
+          success.style.display =
+            "block";
+
+        } else {
+
+          throw new Error(
+            "Submission failed"
+          );
+
+        }
+
+      } catch (error) {
+
+        alert(
+          "We could not submit your inquiry. Please try again or contact Meisophant directly."
+        );
+
+        nextButton.disabled =
+          false;
+
+        nextButton.textContent =
+          "SUBMIT INQUIRY →";
+
+      }
+
+    }
 
   </script>
 
 </body>
 </html>
-
